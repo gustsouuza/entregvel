@@ -1,0 +1,18 @@
+name = "casamento-api"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+# Depois de criar o namespace com `wrangler kv namespace create WEDDING_KV`,
+# cole o "id" retornado aqui embaixo.
+[[kv_namespaces]]
+binding = "WEDDING_KV"
+id = "c397c6c6985b4d17a0b7846d4de7d2e8"
+
+# Bucket R2 pra guardar as FOTOS (fora do documento JSON da KV).
+# Crie com: wrangler r2 bucket create casamento-imagens
+[[r2_buckets]]
+binding = "WEDDING_IMAGES"
+bucket_name = "casamento-imagens"
+
+# ADMIN_TOKEN é um segredo — não coloque aqui.
+# Configure com: wrangler secret put ADMIN_TOKEN
